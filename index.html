@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <h1>Home</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="row">
+        <form action="https://api.staticforms.xyz/submit" method="POST" class="card">
+            <input type="hidden" name="accessKey" value="02c6eccb-3c11-4309-8323-de8bb8fdfaa9">
+            <input type="hidden" name="redirectTo" value="./index.html">
+
+            <div>
+                <label for="inputNome">Nome</label>
+                <input type="text" id="inputNome" name="name" required maxlength="25" minlength="2">
+                <span></span>
+            </div>
+
+            <div>
+                <label for="inputEmail">Endereço de Email:</label>
+                <input type="email" id="inputEmail" name="email" required maxlength="50">
+                <span></span>
+            </div>
+
+            <div>
+                <label for="textAreaMensagem">Mensagem:</label>
+                <textarea name="message" id="textAreaMensagem" required maxlength="100"></textarea>
+                <span></span>
+            </div>
+
+            <button>Enviar Mensagem</button>
+        </form>
+    </div>
+    <footer>
+        <dl>
+            <dt>E-mail</dt>
+            <dd>hygor.k92@gmail.com</dd>
+            <br>
+            <dt>Telefone</dt>
+            <dd>(61) 9 8159-2866</dd>
+        </dl>
+    </footer>
+</body>
+</html>
