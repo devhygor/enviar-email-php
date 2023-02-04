@@ -10,8 +10,8 @@ class Email{
 
     const HOST = 'smtp.titan.email';
     const USER = 'hygor@hygor.net';
-    const PASS = '********.';
-    const SECURE = 'SSL';
+    const PASS = '********';
+    const SECURE = 'ssl';
     const PORT = '465';
     const CHARSET = 'UTF-8';
 
@@ -83,5 +83,3 @@ class Email{
         }
     }
 }
-
-?>

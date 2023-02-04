@@ -2,7 +2,7 @@
 
     require __DIR__.'/vendor/autoload.php';
 
-    use \app\Communication\Email;
+    use \App\Communication\Email;
 
     // Variaveis
     $nome = $_POST['nome'];
@@ -23,12 +23,13 @@
     ";
 
     // Email para quem será enviado o formulario
-    $destinatarios = "hygor.k92@gmail.com";
+    $destinatarios = "hygor@hygor.net";
     $assunto = "Enviado pelo site";
 
     $obEmail = new Email;
     $sucesso = $obEmail->sendEmail($destinatarios, $assunto, $body);
 
     echo $sucesso ? 'Mensagem enviada com sucesso!' : $obEmail->getError();
+    echo "<meta http-equiv='refresh' content='0;URL=../index.html'>";
 
 ?>
