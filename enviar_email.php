@@ -1,16 +1,19 @@
 <?php
 
+    require __DIR__.'/vendor/autoload.php';
+
+    use \app\Communication\Email;
+
     // Variaveis
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $mensagem = $_POST['mensagem'];
     $data_envio = date('d/m/Y');
     $hora_envio = date('H:i:s');
-    $from = 'hygor@hygor.net';
 
 
     // Campo E-mail
-    $arquivo = "
+    $body = "
         <html>
             <p><b>Nome: </b>$nome</p>
             <p><b>E-mail: </b>$email</p>
@@ -20,19 +23,12 @@
     ";
 
     // Email para quem será enviado o formulario
-    $destino = "hygor.k92@gmail.com";
-    $assunto = "Email de Teste";
+    $destinatarios = "hygor.k92@gmail.com";
+    $assunto = "Enviado pelo site";
 
-    // Este sempre deverá existir para garantir a exibição correta dos caracteres
-    $headers = "MIME-Version: 1.1\n";
-    $headers .= "Content-type: text/html; charset=utf-8\n";
-    $headers .= "From: Formulario Contato <$from>\n";
-    $headers .= "Return-Path: $from\n";
-    $headers .= "Reply-to: $email\n";
+    $obEmail = new Email;
+    $sucesso = $obEmail->sendEmail($destinatarios, $assunto, $body);
 
-    // Enviar
-    mail($destino, $assunto, $arquivo, $headers, $from);
-
-    echo "<meta http-equiv='refresh' content='10;URL=../contato.html'>";
+    echo $sucesso ? 'Mensagem enviada com sucesso!' : $obEmail->getError();
 
 ?>
